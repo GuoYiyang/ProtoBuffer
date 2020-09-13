@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+message Person {
+  optional int32 id = 1;
+  optional int64 age = 2;
+  optional uint32 u32 = 3;
+  optional uint64 u64 = 4;
+  optional float height = 5;
+  optional double weight = 6;
+  optional bool sex = 7;
+  optional string name = 8;
+  optional bytes byt = 9;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+  }
+
+  message PhoneNumber {
+    optional string number = 1;
+    optional PhoneType type = 2;
+  }
+
+  repeated PhoneNumber phone = 10;
+}
+
+message AddressBook {
+    repeated Person person = 1;
+}
